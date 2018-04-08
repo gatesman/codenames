@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/codenames.css"/>
+
+</head>
+
+<body>
+
+    <div id="borderdiv">
+        <table id="cards">
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+            </tr>
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+            </tr>
+        </table>
+    </div>
+
+    Code: <input type="text" id="code"><br>
+    <button onclick="generateCodenames()">Codenames</button>
+    <button onclick="generateDuet(0)">Codenames Duet Player 1</button>
+    <button onclick="generateDuet(1)">Codenames Duet Player 2</button>
+
+    <p class="credits">
+        Website created by <a href="https://boardgamegeek.com/user/gatesman">gatesman</a>.
+    </p>
+
+    <script src="js/jQuery-v3.1.0.js"></script>
+    <script src="js/seedrandom.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <script>
+        $(document).ready(generateCodenames);
+    </script>
+
+</body>
+</html>

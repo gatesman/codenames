@@ -1,0 +1,54 @@
+body {
+  margin: 10px;
+}
+
+#borderdiv {
+  padding: 5px;
+}
+
+input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border: solid 1px #000;
+}
+
+tr {
+    width: 100%;
+    height: 60px;
+}
+
+td {
+  border: solid 1px #000;
+  color: #fff;
+}
+
+.green {
+  background: #008b3c;
+}
+
+.black {
+  background: #000;
+}
+
+.beige {
+  background: #e6d3a7;
+}
+
+.red {
+  background: #e23839;
+}
+
+.blue {
+  background: #077da7;
+}
+
+.credits {
+  opacity: 0.5;
+  font-style: italic;
+  font-size: .75em;
+  margin-top: 20px;
+}
