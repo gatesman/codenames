@@ -54,16 +54,18 @@
     </div>
 
     Code: <input type="text" id="code"><br>
-    <button onclick="generateCodenames()">Codenames</button>
-    <button onclick="generatePictures()">Codenames Pictures</button>
-    <button onclick="generateDuet(0)">Codenames Duet Player 1</button>
-    <button onclick="generateDuet(1)">Codenames Duet Player 2</button>
+    <div class="btn-group-vertical" role="group">
+        <button type="button" class="btn btn-outline-dark" onclick="generateCodenames()">Codenames</button>
+        <button type="button" class="btn btn-outline-dark" onclick="generatePictures()">Codenames Pictures</button>
+        <button type="button" class="btn btn-outline-dark" onclick="generateDuet(0)">Codenames Duet Player 1</button>
+        <button type="button" class="btn btn-outline-dark" onclick="generateDuet(1)">Codenames Duet Player 2</button>
+    </div>
 
     <p class="credits">
         Website created by <a href="https://boardgamegeek.com/user/gatesman">gatesman</a>.
     </p>
 
-    <script src="js/jQuery-v3.1.0.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="js/seedrandom.js"></script>
     <script src="js/scripts.js"></script>
 
