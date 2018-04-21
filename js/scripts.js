@@ -79,9 +79,10 @@ var assignDuetColors = function(player, code) {
     var colorIndex = player === 0 ? DUET_COLORS_0 : DUET_COLORS_1;
 
     for (i = 0; i < 25; i++) {
+        var cellToModify = (player === 0) ? i : 24 - i;
         var randomValue = Math.floor(Math.random() * colorsLeft.length);
-        $("td").eq(i).removeClass();
-        $("td").eq(i).addClass(colorIndex[colorsLeft[randomValue]]);
+        $("td").eq(cellToModify).removeClass();
+        $("td").eq(cellToModify).addClass(colorIndex[colorsLeft[randomValue]]);
         colorsLeft.splice(randomValue, 1);
     }
 };
