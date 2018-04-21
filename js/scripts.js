@@ -2,6 +2,7 @@ var A = 65;
 
 // 0 = First team, 1 = Second team, 2 = neutral, 3 = assassin
 var NORMAL_COLORS = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3 ]
+var PICTURES_COLORS = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3 ]
 var NORMAL_TEAMS = [ "red", "blue" ];
 
 // 0 = Blk/Grn, 1 = Bge/Grn, 2 = Grn/Grn, 3 = Grn/Bge, 4 = Grn/Blk, 5 = Bge/Blk, 6 = Blk/Blk, 7 = Bge/Bge, 8 = Blk/Bge
@@ -33,6 +34,7 @@ var assignNormalColors = function(str) {
 
     $("#borderdiv").removeClass();
     $("#borderdiv").addClass(teamOneColor);
+    $("#lastrow").show();
 
     var colorsLeft = NORMAL_COLORS.slice(0);
     var colorIndex = [ teamOneColor, teamTwoColor, "beige", "black" ];
@@ -45,11 +47,33 @@ var assignNormalColors = function(str) {
     }
 };
 
+var assignPicturesColors = function(str) {
+    var codeHash = codeValue(str);
+    var startingTeamIndex = codeHash % 2;
+    var teamOneColor = NORMAL_TEAMS[startingTeamIndex];
+    var teamTwoColor = NORMAL_TEAMS[1 - startingTeamIndex];
+
+    $("#borderdiv").removeClass();
+    $("#borderdiv").addClass(teamOneColor);
+    $("#lastrow").hide();
+
+    var colorsLeft = PICTURES_COLORS.slice(0);
+    var colorIndex = [ teamOneColor, teamTwoColor, "beige", "black" ];
+
+    for (i = 0; i < 20; i++) {
+        var randomValue = Math.floor(Math.random() * colorsLeft.length);
+        $("td").eq(i).removeClass();
+        $("td").eq(i).addClass(colorIndex[colorsLeft[randomValue]]);
+        colorsLeft.splice(randomValue, 1);
+    }
+};
+
 var assignDuetColors = function(player, code) {
     var codeHash = codeValue(code);
 
     $("#borderdiv").removeClass();
     $("#borderdiv").addClass("green");
+    $("#lastrow").show();
 
     var colorsLeft = DUET_COLORS.slice(0);
     var colorIndex = player === 0 ? DUET_COLORS_0 : DUET_COLORS_1;
@@ -75,6 +99,12 @@ var generateCodenames = function() {
     code = fetchCode();
     Math.seedrandom(code);
     assignNormalColors(code);
+}
+
+var generatePictures = function() {
+    code = fetchCode();
+    Math.seedrandom(code);
+    assignPicturesColors(code);
 }
 
 var generateDuet = function(player) {
